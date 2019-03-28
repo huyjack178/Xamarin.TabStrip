@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:JellyClock.Views"
+             xmlns:tab="clr-namespace:TabStrip.FormsPlugin.Abstractions"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="TabStrip.FormsPlugin.Abstractions.TabStripControl"
+             x:Name="this"
+             HeightRequest="280" WidthRequest="280" VerticalOptions="FillAndExpand" 
+            HorizontalOptions="FillAndExpand">
+    <ContentView.Resources>
+        <tab:TabViewSelector x:Key="tabSelector"></tab:TabViewSelector>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout>
+            <controls:CarouselViewControl
+                 x:Name="Carousel"  ItemsSource="{Binding Tabs}"
+                ItemTemplate="{StaticResource tabSelector}"
+                Position="0" VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="Red"
+                ShowIndicators="True">
+            </controls:CarouselViewControl>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
